@@ -1,0 +1,25 @@
+[
+    {
+      "governorate": "Tunis",
+      "adresse": "123 Main St",
+      "duration": "3 days",
+      "date": "2024-07-10",
+      "price": "200",
+      "shortDescription": "A short description of the offer",
+      "description": "A detailed description of the offer",
+      "agency": "Best Agency",
+      "picture": "public/images/offer1.jpg"
+    },
+    {
+      "governorate": "Sfax",
+      "adresse": "456 Secondary St",
+      "duration": "5 days",
+      "date": "2024-08-15",
+      "price": "350",
+      "shortDescription": "Another short description",
+      "description": "Another detailed description",
+      "agency": "Super Agency",
+      "picture": "public/images/offer2.jpg"
+    }
+  ]
+  

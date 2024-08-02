@@ -1,0 +1,10 @@
+.container {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+}
+
+.btn-facebook {
+    background-color: #4267B2;
+    color: white;
+}

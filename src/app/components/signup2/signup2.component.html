@@ -1,0 +1,23 @@
+<div class="container">
+    <h2>Sign Up</h2>
+    <form (ngSubmit)="onSignUp()">
+        <div class="form-group">
+            <label for="matricule">Matricule:</label>
+            <input id="matricule" name="matricule" [(ngModel)]="matricule" required class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input id="email" name="email" type="email" [(ngModel)]="email" required class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="telephone">Telephone:</label>
+            <input id="telephone" name="telephone" type="tel" [(ngModel)]="telephone" required class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="rib">RIB:</label>
+            <input id="rib" name="rib" [(ngModel)]="rib" required class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+        <button type="button" class="btn btn-facebook" (click)="signUpWithFacebook()">Sign Up with Facebook</button>
+    </form>
+</div>
