@@ -1,29 +1,31 @@
 import { Component } from '@angular/core';
+import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-payment',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './payment.component.html',
-  styleUrls: ['./payment.component.css']
+  styleUrls: ['./payment.component.css'],
 })
 export class PaymentComponent {
-  paymentModel = {
-    cardNumber: '',
-    expirationDate: '',
-    cvv: '',
-    cardHolderName: ''
-  };
+  paymentForm: FormGroup;
 
-  constructor(private router: Router) {}
-
-  onSubmit() {
-    console.log('Payment Info:', this.paymentModel);
-    // Implement your payment logic here
-    alert('Payment successful!');
-    this.router.navigate(['/']); // Redirect to home page after payment
+  constructor(private fb: FormBuilder) {
+    this.paymentForm = this.fb.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      // Add more form controls as needed
+    });
   }
+  onSubmit() {
+    if (this.paymentForm.valid) {
+      console.log('Form Data:', this.paymentForm.value);
+      // Call the payment API here
+    } else {
+      console.log('Form is invalid:', this.paymentForm.errors);
+    }
+  }
+  
 }

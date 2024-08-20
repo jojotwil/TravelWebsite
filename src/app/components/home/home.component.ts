@@ -27,7 +27,11 @@ export class HomeComponent implements OnInit {
       shortDescription: "A short description of the offer",
       description: "A detailed description of the offer",
       agency: "Best Agency",
-      picture: "img/package-1.jpg"
+      picture: "img/package-1.jpg",
+      additionalImages: [
+     "img/package-2.jpg",
+        "img/package-3.jpg"
+      ]
     },
     {
       governorate: "Sfax",
@@ -38,7 +42,11 @@ export class HomeComponent implements OnInit {
       shortDescription: "Another short description",
       description: "Another detailed description",
       agency: "Super Agency",
-      picture: "img/package-2.jpg"
+      picture: "img/package-2.jpg",
+      additionalImages: [
+        "img/package-3.jpg",
+        "img/package-1.jpg"
+      ]
     },
     {
       governorate: "Nabeul",
@@ -49,7 +57,11 @@ export class HomeComponent implements OnInit {
       shortDescription: "A third short description",
       description: "A third detailed description",
       agency: "Excellent Agency",
-      picture: "img/package-3.jpg"
+      picture: "img/package-3.jpg",
+      additionalImages: [
+        "img/package-2.jpg",
+        "img/package-1.jpg"
+      ]
     }
   ];
 

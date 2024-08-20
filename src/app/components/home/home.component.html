@@ -59,15 +59,36 @@
 </div>
 
 <!-- Modal -->
+<!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">{{selectedOffre?.governorate}}</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <img [src]="selectedOffre?.picture" class="img-fluid" alt="">
+                <!-- Carousel Start -->
+                <div id="offreCarousel" class="carousel slide mb-3" data-bs-ride="carousel" data-bs-interval="5000">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img [src]="selectedOffre?.picture" class="d-block w-100" alt="Main Image">
+                        </div>
+                        <div class="carousel-item" *ngFor="let image of selectedOffre?.additionalImages">
+                            <img [src]="image" class="d-block w-100" alt="Additional Image">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#offreCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#offreCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <!-- Carousel End -->
+                
                 <p>{{selectedOffre?.description}}</p>
                 <p><strong>Duration:</strong> {{selectedOffre?.duration}}</p>
                 <p><strong>Date:</strong> {{selectedOffre?.date}}</p>
@@ -76,7 +97,8 @@
                 <p><strong>Address:</strong> {{selectedOffre?.adresse}}</p>
             </div>
             <div class="modal-footer">
-                
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+               
             </div>
         </div>
     </div>
